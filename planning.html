@@ -1,0 +1,136 @@
+<!-- planning.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wedding Planner • WedJoy</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a class="brand" href="index.html">← Back to Home</a>
+      <h1>Wedding Planner Dashboard</h1>
+    </div>
+  </header>
+
+  <main class="pad container">
+    <h2>Welcome to your Wedding Planner 💍</h2>
+
+    <!-- Step 1: Set Your Total Budget -->
+    <section class="budget-intro">
+      
+      <p>Enter your estimated total wedding budget to unlock the planner tools.</p>
+      <div style="display:flex;gap:12px;align-items:center;">
+        <input type="number" id="totalBudget" placeholder="Enter total budget (₹)" min="0" />
+        <button id="saveBudget" class="btn pill">Save Budget</button>
+        <span id="budgetSavedMsg" style="color:var(--muted);font-weight:600;"></span>
+      </div>
+    </section>
+
+    <!-- Planner tools (hidden until budget set) -->
+    <section id="plannerTools" class="is-hidden" style="margin-top:24px;">
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:12px;">
+        <button class="tab pill active" data-target="vendorsView">Vendors</button>
+        <button class="tab pill" data-target="budgetView"> Budget Breakdown</button>
+        
+      </div>
+
+      <!-- Vendors View -->
+      <div id="vendorsView" class="view active">
+        <h3>Add & Manage Vendors</h3>
+        <div style="margin:12px 0;">
+          <button id="addVendor" class="btn">+ Add Vendor</button>
+        </div>
+
+        <div style="overflow:auto">
+          <table id="vendorTable" style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:var(--card);">
+                <th style="padding:10px;border:1px solid var(--border)">Name</th>
+                <th style="padding:10px;border:1px solid var(--border)">Category</th>
+                <th style="padding:10px;border:1px solid var(--border)">City</th>
+                <th style="padding:10px;border:1px solid var(--border)">Phone</th>
+                <th style="padding:10px;border:1px solid var(--border)">Notes</th>
+                <th style="padding:10px;border:1px solid var(--border)"></th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Budget View -->
+      <div id="budgetView" class="view" style="margin-top:18px;">
+        <h3>Budget Breakdown & Dashboard</h3>
+
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin:12px 0;">
+          <div style="flex:1;min-width:280px;">
+            <div style="display:flex;gap:8px;align-items:center;">
+              <input id="expenseCategory" placeholder="Category (e.g., Catering)" />
+              <input id="expenseItem" placeholder="Item (e.g., Buffet)" />
+              <input id="expenseEst" type="number" placeholder="Estimated (₹)" min="0"/>
+              <input id="expenseAct" type="number" placeholder="Actual (₹)" min="0"/>
+              <button id="addExpense" class="btn">Add</button>
+            </div>
+
+            <div style="margin-top:14px;overflow:auto;">
+              <table id="budgetTable" style="width:100%;border-collapse:collapse;">
+                <thead>
+                  <tr>
+                    <th style="padding:8px;border:1px solid var(--border)">Category</th>
+                    <th style="padding:8px;border:1px solid var(--border)">Item</th>
+                    <th style="padding:8px;border:1px solid var(--border)">Estimated</th>
+                    <th style="padding:8px;border:1px solid var(--border)">Actual</th>
+                    <th style="padding:8px;border:1px solid var(--border)"></th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="2" style="padding:8px;border:1px solid var(--border);font-weight:700">Totals</td>
+                    <td id="estTotal" style="padding:8px;border:1px solid var(--border)">0</td>
+                    <td id="actTotal" style="padding:8px;border:1px solid var(--border)">0</td>
+                    <td style="padding:8px;border:1px solid var(--border)"></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+
+          <!-- Dashboard panel -->
+          <div style="width:360px;min-width:280px;background:rgba(255,255,255,0.95);border-radius:12px;padding:16px;border:1px solid var(--border);box-shadow:var(--shadow)">
+            <h4 style="margin:0 0 8px 0">Budget Dashboard</h4>
+            <p style="margin:0 0 8px 0;color:var(--muted)">Total budget and spend summary</p>
+
+            <div style="height:12px;background:#fff;border-radius:8px;overflow:hidden;border:1px solid var(--border);">
+              <div id="budgetProgress" class="meter-bar" style="width:0%"></div>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:8px;font-weight:700">
+              <div>Spent: <span id="spentLbl">₹0</span></div>
+              <div>Remaining: <span id="remainLbl">₹0</span></div>
+            </div>
+
+            <hr style="margin:12px 0;border:none;border-top:1px dashed var(--border)"/>
+
+            <canvas id="budgetChart" width="320" height="200" style="display:block;margin:0 auto;"></canvas>
+            <div id="chartLegend" style="margin-top:10px;display:flex;flex-wrap:wrap;gap:6px;"></div>
+          </div>
+        </div>
+      </div>
+
+      
+    </section>
+  </main>
+
+  <footer class="footer" style="margin-top:40px;">
+    <div class="container">
+      <p>© 2025 WedJoy. Crafted with ❤ for beautiful beginnings.</p>
+    </div>
+  </footer>
+
+  <script src="planner.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,160 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Wedding, Your Way • Shaadi Planner</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <!-- Top utility bar -->
+  <div class="topbar">
+    <div class="container">
+      <span>Your's Favourite Wedding Planning Platform</span>
+      
+    </div>
+  </div>
+
+  <!-- Header / Navbar -->
+  <header class="header" id="header">
+    <div class="container">
+      <a class="brand" href="#">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ff4d9d"/>
+                <stop offset="100%" stop-color="#7c4dff"/>
+              </linearGradient>
+            </defs>
+            <path fill="url(#g)" d="M47.9 10c-4.7 0-9 2.6-11.3 6.6C34.2 12.6 29.9 10 25.2 10 18 10 12 16 12 23.2c0 13 17.4 23 24.6 31 7.2-8 24.6-18 24.6-31C61.2 16 55.2 10 47.9 10z"/>
+          </svg>
+        </span>
+        <span class="brand-text">Wed<span>Joy</span></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+
+      <nav class="nav" id="nav">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#stories" class="nav-link">Stories</a>
+      </nav>
+
+      <div class="header-cta">
+        <a class="btn ghost" href="#plan">Plan Your Day</a>
+        <a class="btn pill" href="#contact">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="4.png" alt="Wedding couple"/>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+      <div class="hero-left">
+        <h1>Your Dream,<br/>Our Promise</h1>
+        <p class="lead">We turn dreams into timeless moments. From first ideas to “I do,” we craft weddings with care, creativity, and heart.</p>
+        <div class="hero-buttons">
+          <a href="planning.html" class="btn pill lg">Start Planning</a>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH (moved below hero, above About) -->
+  <section class="search-section">
+    <div class="container">
+      <div class="search-card search-elevated">
+        <div class="search-row">
+          <div class="input-wrap">
+            <label>Select vendor type</label>
+            <select id="vendorType">
+              <option>Venues</option>
+              <option>Photographers</option>
+              <option>Caterers</option>
+              <option>Makeup Artists</option>
+              <option>Decorators</option>
+              <option>Entertainment</option>
+              <option>Transport</option>
+              <option>Wedding Planners</option>
+            </select>
+          </div>
+          <div class="input-wrap">
+            <label>Select city</label>
+            <select id="city">
+              <option>All Cities</option>
+              <option>Delhi NCR</option>
+              <option>Mumbai</option>
+              <option>Bengaluru</option>
+              <option>Hyderabad</option>
+              <option>Jaipur</option>
+              <option>Lucknow</option>
+              <option>Kolkata</option>
+              <option>Goa</option>
+            </select>
+          </div>
+          <button id="getStarted" class="btn pill full">Get Started</button>
+        </div>
+
+        <div class="popular">
+          <span>Popular Searches:</span>
+          <div class="chips">
+            <a class="chip" href="#">Wedding Photographers</a>
+            <a class="chip" href="#">Bridal Makeup</a>
+            <a class="chip" href="#">Wedding Cards</a>
+            <a class="chip" href="#">Wedding Venues</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="pad" id="about">
+    <div class="container">
+      <h2>About</h2>
+      <p>At our core, we are a dedicated full-service wedding planning team passionate about creating unforgettable celebrations that beautifully blend Indian traditions with modern aesthetics. With years of experience and a keen eye for detail, we work closely with couples to understand their unique vision, ensuring every element of their special day reflects their personality and cultural heritage. From intricate wedding rituals to contemporary decor, our team expertly curates every detail, making the planning process seamless and enjoyable. We pride ourselves on personalized service, attentive coordination, and innovative ideas that elevate each celebration. Whether you envision a grand traditional ceremony or a chic modern affair, we are committed to turning your dreams into reality. Our team’s expertise and genuine passion for weddings ensure that your special day feels both deeply personal and truly unforgettable. We believe that every love story is unique, and our goal is to craft a celebration that not only honors your cultural roots but also celebrates your individual style, creating memories to cherish for a lifetime. Trust us to bring your vision to life with creativity, professionalism, and heartfelt dedication.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="pad" id="services">
+    <div class="container">
+      <h2>Services</h2>
+      <ul class="services">
+        <li>Venue discovery & negotiations</li>
+        <li>Photography & cinematography</li>
+        <li>Design & décor</li>
+        <li>Food & beverages</li>
+        <li>Bridal styling & makeup</li>
+        <li>Guest logistics & hospitality</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Stories -->
+  <section class="pad" id="stories">
+    <div class="container">
+      <h2>Stories</h2>
+      <p>Browse real weddings—from pastel day mandaps to starry sangeet nights.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <p>© 2025 WedJoy. Crafted with ❤ for beautiful beginnings.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
